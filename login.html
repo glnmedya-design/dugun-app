@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Giriş</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#0f0f0f,
+#1c1c1c
+);
+
+}
+
+.login-box{
+
+width:400px;
+
+background:
+rgba(255,255,255,0.05);
+
+border:1px solid
+rgba(255,255,255,0.1);
+
+backdrop-filter:blur(10px);
+
+padding:40px;
+
+border-radius:25px;
+
+box-shadow:
+0 10px 40px rgba(0,0,0,0.4);
+
+}
+
+h1{
+
+color:white;
+text-align:center;
+margin-bottom:30px;
+
+}
+
+input{
+
+width:100%;
+
+padding:15px;
+
+margin-bottom:20px;
+
+border:none;
+
+border-radius:12px;
+
+background:
+rgba(255,255,255,0.08);
+
+color:white;
+
+font-size:16px;
+
+outline:none;
+
+}
+
+button{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+background:#00c853;
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+button:hover{
+
+opacity:0.9;
+
+}
+
+.hata{
+
+margin-top:15px;
+text-align:center;
+color:#ff5252;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h1>
+🔐 Admin Giriş
+</h1>
+
+<input
+type="text"
+id="kullaniciAdi"
+placeholder="Kullanıcı Adı">
+
+<input
+type="password"
+id="sifre"
+placeholder="Şifre">
+
+<button onclick="girisYap()">
+
+Giriş Yap
+
+</button>
+
+<div
+id="hata"
+class="hata">
+</div>
+
+</div>
+
+<script src="login.js"></script>
+
+</body>
+
+</html>

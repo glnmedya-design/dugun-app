@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Premium Admin Panel</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#0f0f0f,
+#1c1c1c
+);
+
+color:white;
+min-height:100vh;
+padding:30px;
+
+}
+
+.header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+flex-wrap:wrap;
+gap:20px;
+
+}
+
+.logo{
+
+font-size:32px;
+font-weight:700;
+
+}
+
+.istatistikler{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+margin-bottom:30px;
+
+}
+
+.kart{
+
+background:
+rgba(255,255,255,0.06);
+
+backdrop-filter:blur(10px);
+
+border:1px solid
+rgba(255,255,255,0.1);
+
+padding:25px;
+border-radius:20px;
+
+box-shadow:
+0 8px 30px rgba(0,0,0,0.3);
+
+transition:0.3s;
+
+}
+
+.kart:hover{
+
+transform:translateY(-5px);
+
+}
+
+.kart h2{
+
+font-size:40px;
+margin-bottom:10px;
+
+}
+
+.kart p{
+
+color:#bbb;
+
+}
+
+.takvim{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:25px;
+
+}
+
+.rezervasyon{
+
+background:
+rgba(255,255,255,0.05);
+
+border:1px solid
+rgba(255,255,255,0.1);
+
+border-radius:20px;
+
+padding:25px;
+
+backdrop-filter:blur(8px);
+
+transition:0.3s;
+
+}
+
+.rezervasyon:hover{
+
+transform:scale(1.02);
+
+}
+
+.rezervasyon h3{
+
+font-size:24px;
+margin-bottom:15px;
+
+}
+
+.bilgi{
+
+margin-bottom:10px;
+color:#ddd;
+
+}
+
+.durum{
+
+display:inline-block;
+
+padding:8px 16px;
+
+border-radius:30px;
+
+font-size:14px;
+font-weight:600;
+
+margin-top:15px;
+
+}
+
+.bekliyor{
+
+background:#ff9800;
+color:white;
+
+}
+
+.onaylandi{
+
+background:#00c853;
+color:white;
+
+}
+
+.iptal{
+
+background:#ff1744;
+color:white;
+
+}
+
+.butons{
+
+display:flex;
+gap:10px;
+margin-top:20px;
+flex-wrap:wrap;
+
+}
+
+button{
+
+flex:1;
+padding:12px;
+border:none;
+border-radius:12px;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+min-width:100px;
+
+}
+
+.onayBtn{
+
+background:#00c853;
+color:white;
+
+}
+
+.silBtn{
+
+background:#ff1744;
+color:white;
+
+}
+
+.iptalBtn{
+
+background:#ff9800;
+color:white;
+
+}
+
+button:hover{
+
+opacity:0.85;
+
+}
+
+@media(max-width:768px){
+
+body{
+
+padding:15px;
+
+}
+
+.logo{
+
+font-size:24px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+<script>
+
+if(
+localStorage.getItem("adminGiris")
+!== "true"
+){
+
+window.location.href =
+"login.html";
+
+}
+
+</script>
+
+<div class="header">
+
+<div class="logo">
+📸 Premium Admin Panel
+</div>
+
+</div>
+
+
+<div class="istatistikler">
+
+<div class="kart">
+
+<h2 id="toplamRez">0</h2>
+
+<p>Toplam Rezervasyon</p>
+
+</div>
+
+
+<div class="kart">
+
+<h2 id="toplamKazanc">0 TL</h2>
+
+<p>Toplam Kazanç</p>
+
+</div>
+
+
+<div class="kart">
+
+<h2 id="bekleyenSayisi">0</h2>
+
+<p>Bekleyen Rezervasyon</p>
+
+</div>
+
+</div>
+
+
+<div
+id="takvim"
+class="takvim">
+</div>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+
+</html>
