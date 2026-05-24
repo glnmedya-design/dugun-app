@@ -196,5 +196,25 @@ font-size:30px;
 .container h1{
 font-size:30px;
 }
-
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:70px;
+height:70px;
+background:#25d366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:34px;
+text-decoration:none;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+z-index:999;
+transition:0.3s;
+}
+.whatsapp:hover{
+transform:scale(1.1);
+}
 }
