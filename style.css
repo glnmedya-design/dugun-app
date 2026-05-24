@@ -6,9 +6,38 @@ background:#f5f5f5;
 color:#222;
 }
 
+.navbar{
+position:sticky;
+top:0;
+z-index:999;
+background:#111;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+.navbar nav{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
 .hero{
-height:80vh;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+height:85vh;
+background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
 url("https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070");
 background-size:cover;
 background-position:center;
@@ -22,8 +51,9 @@ padding:20px;
 }
 
 .hero h1{
-font-size:60px;
-margin-bottom:10px;
+font-size:58px;
+max-width:900px;
+margin-bottom:20px;
 }
 
 .hero p{
@@ -39,52 +69,66 @@ border-radius:40px;
 text-decoration:none;
 font-size:18px;
 font-weight:bold;
-transition:0.3s;
 }
 
-.hero-btn:hover{
-transform:scale(1.05);
-}
-
-.galeri{
-max-width:1200px;
-margin:70px auto;
-padding:20px;
-}
-
-.galeri h2{
+.bolum{
+max-width:1100px;
+margin:60px auto;
+padding:40px 20px;
 text-align:center;
-font-size:40px;
-margin-bottom:40px;
 }
 
-.galeri-grid{
+.bolum h2{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.bolum p{
+font-size:18px;
+color:#555;
+margin-bottom:30px;
+}
+
+.dark{
+background:#111;
+color:white;
+max-width:none;
+padding:70px 20px;
+}
+
+.dark p{
+color:#ddd;
+}
+
+.iki-kart{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
+max-width:1000px;
+margin:auto;
 }
 
-.galeri-kart{
+.buyuk-kart{
 height:260px;
-border-radius:20px;
+border-radius:22px;
 background:linear-gradient(135deg,#222,#666);
+color:white;
 display:flex;
 align-items:flex-end;
 padding:25px;
-font-size:24px;
+font-size:26px;
 font-weight:bold;
-color:white;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
 transition:0.3s;
 }
 
-.galeri-kart:hover{
-transform:translateY(-10px);
+.buyuk-kart:hover{
+transform:translateY(-8px);
 }
 
 .container{
 max-width:850px;
-margin:50px auto;
+margin:60px auto;
 background:white;
 padding:35px;
 border-radius:20px;
@@ -177,8 +221,19 @@ opacity:0.9;
 
 @media(max-width:768px){
 
+.navbar{
+padding:15px;
+flex-direction:column;
+gap:12px;
+}
+
+.navbar nav{
+justify-content:center;
+font-size:14px;
+}
+
 .hero h1{
-font-size:38px;
+font-size:34px;
 }
 
 .hero p{
@@ -189,32 +244,12 @@ font-size:18px;
 flex-direction:column;
 }
 
-.galeri h2{
+.bolum h2{
 font-size:30px;
 }
 
 .container h1{
 font-size:30px;
 }
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-width:70px;
-height:70px;
-background:#25d366;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:34px;
-text-decoration:none;
-color:white;
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
-z-index:999;
-transition:0.3s;
-}
-.whatsapp:hover{
-transform:scale(1.1);
-}
+
 }
