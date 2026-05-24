@@ -11,8 +11,8 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
 font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
@@ -20,18 +20,16 @@ background:#000;
 color:white;
 }
 
-/* HEADER */
-
 header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
+background:#000;
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 40px;
-background:#000;
 z-index:999;
 border-bottom:1px solid rgba(255,255,255,.1);
 }
@@ -43,24 +41,19 @@ gap:15px;
 }
 
 .logo-area img{
-width:75px;
-height:75px;
+width:70px;
+height:70px;
 border-radius:50%;
 object-fit:cover;
 }
 
-.logo-text{
-display:flex;
-flex-direction:column;
-}
-
 .logo-text h1{
-font-size:30px;
 color:#d4af37;
+font-size:28px;
 }
 
 .logo-text span{
-font-size:13px;
+font-size:12px;
 letter-spacing:4px;
 }
 
@@ -72,16 +65,8 @@ gap:30px;
 nav a{
 color:white;
 text-decoration:none;
-font-size:18px;
 font-weight:bold;
-transition:.3s;
 }
-
-nav a:hover{
-color:#d4af37;
-}
-
-/* HERO */
 
 .hero{
 height:100vh;
@@ -97,33 +82,26 @@ text-align:center;
 padding:20px;
 }
 
-.hero-content h2{
-font-size:75px;
+.hero h2{
+font-size:70px;
 margin-bottom:20px;
 }
 
-.hero-content p{
+.hero p{
 font-size:28px;
-margin-bottom:35px;
+margin-bottom:30px;
 }
 
-.hero-content a{
+.hero a{
 display:inline-block;
 padding:18px 40px;
 background:#d4af37;
 color:black;
-text-decoration:none;
 border-radius:50px;
-font-size:22px;
 font-weight:bold;
-transition:.3s;
+text-decoration:none;
+font-size:20px;
 }
-
-.hero-content a:hover{
-transform:scale(1.05);
-}
-
-/* HİZMETLER */
 
 .services{
 padding:100px 40px;
@@ -154,11 +132,6 @@ overflow:hidden;
 width:100%;
 height:100%;
 object-fit:cover;
-transition:.4s;
-}
-
-.card:hover img{
-transform:scale(1.08);
 }
 
 .card-overlay{
@@ -171,28 +144,9 @@ align-items:center;
 }
 
 .card-overlay h3{
-font-size:38px;
+font-size:35px;
 text-align:center;
-padding:20px;
 }
-<label style="background:#111;padding:15px;border-radius:10px;font-size:14px;line-height:1.6;">
-<input type="checkbox" id="kvkkOnay" required>
-KVKK Aydınlatma Metni’ni okudum ve kişisel verilerimin rezervasyon, iletişim ve hizmet süreci kapsamında işlenmesini kabul ediyorum.
-<br>
-<small>
-Ad soyad, telefon, tarih, saat, organizasyon ve seçilen hizmet bilgileriniz yalnızca rezervasyon takibi, iletişim ve hizmet planlaması amacıyla kullanılacaktır.
-</small>
-</label>
-
-<label style="background:#111;padding:15px;border-radius:10px;font-size:14px;line-height:1.6;">
-<input type="checkbox" id="gorselOnay" required>
-Çekim kapsamında elde edilen fotoğraf ve video görüntülerimin Guliten Medya Organizasyon tarafından internet sitesi, Instagram, sosyal medya, portfolyo, reklam ve tanıtım çalışmalarında kullanılmasına izin veriyorum.
-<br>
-<small>
-Bu izni vermediğiniz takdirde online rezervasyon formu gönderilemez.
-</small>
-</label>
-/* REZERVASYON */
 
 .rezervasyon{
 padding:100px 20px;
@@ -224,6 +178,25 @@ height:180px;
 resize:none;
 }
 
+.secim{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.secim label{
+background:#111;
+padding:15px;
+border-radius:10px;
+}
+
+.toplam{
+font-size:30px;
+font-weight:bold;
+text-align:center;
+color:#d4af37;
+}
+
 .form-box button{
 padding:18px;
 background:#d4af37;
@@ -234,47 +207,11 @@ font-weight:bold;
 cursor:pointer;
 }
 
-.secim{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.secim label{
-background:#111;
-padding:18px;
-border-radius:12px;
-font-size:18px;
-}
-
-.toplam{
-font-size:30px;
-font-weight:bold;
-text-align:center;
-margin-top:20px;
-color:#d4af37;
-}
-
-/* FOOTER */
-
 footer{
 background:#111;
 padding:50px 20px;
 text-align:center;
 }
-
-footer h2{
-font-size:35px;
-color:#d4af37;
-margin-bottom:20px;
-}
-
-footer p{
-margin-bottom:10px;
-font-size:18px;
-}
-
-/* INSTAGRAM */
 
 .instagram-btn{
 position:fixed;
@@ -290,8 +227,6 @@ font-weight:bold;
 z-index:999;
 }
 
-/* WHATSAPP */
-
 .whatsapp-btn{
 position:fixed;
 right:20px;
@@ -306,8 +241,6 @@ font-weight:bold;
 z-index:999;
 }
 
-/* MOBİL */
-
 @media(max-width:900px){
 
 header{
@@ -320,20 +253,12 @@ flex-wrap:wrap;
 justify-content:center;
 }
 
-.hero-content h2{
+.hero h2{
 font-size:45px;
 }
 
-.hero-content p{
+.hero p{
 font-size:22px;
-}
-
-.logo-text h1{
-font-size:22px;
-}
-
-.section-title{
-font-size:35px;
 }
 
 }
@@ -365,27 +290,19 @@ font-size:35px;
 
 </header>
 
-<!-- HERO -->
-
 <section class="hero" id="anasayfa">
 
-<div class="hero-content">
+<div>
 
 <h2>Hayalleriniz İçin Sinematik Çekimler</h2>
 
-<p>
-Düğün, nişan, kına, klip, drone ve özel gün çekimleri
-</p>
+<p>Düğün, nişan, kına, klip ve drone çekimleri</p>
 
-<a href="#rezervasyon">
-Rezervasyon Oluştur
-</a>
+<a href="#rezervasyon">Rezervasyon Oluştur</a>
 
 </div>
 
 </section>
-
-<!-- HİZMETLER -->
 
 <section class="services" id="hizmetler">
 
@@ -395,57 +312,26 @@ Rezervasyon Oluştur
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop">
-<div class="card-overlay">
-<h3>Fotoğraf Çekimi</h3>
-</div>
+<div class="card-overlay"><h3>Fotoğraf Çekimi</h3></div>
 </div>
 
 <div class="card">
 <img src="images/DSC_3620.JPG">
-<div class="card-overlay">
-<h3>Aktüel Kamera Çekimi</h3>
-</div>
+<div class="card-overlay"><h3>Aktüel Kamera Çekimi</h3></div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=1200&auto=format&fit=crop">
-<div class="card-overlay">
-<h3>Drone Çekimi</h3>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop">
-<div class="card-overlay">
-<h3>Klip Çekimi</h3>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop">
-<div class="card-overlay">
-<h3>Organizasyon</h3>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop">
-<div class="card-overlay">
-<h3>Danışmanlık Hizmetleri</h3>
-</div>
+<div class="card-overlay"><h3>Drone Çekimi</h3></div>
 </div>
 
 </div>
 
 </section>
 
-<!-- REZERVASYON -->
-
 <section class="rezervasyon" id="rezervasyon">
 
-<h2 class="section-title">
-Rezervasyon Oluştur
-</h2>
+<h2 class="section-title">Rezervasyon Oluştur</h2>
 
 <div class="form-box">
 
@@ -453,73 +339,31 @@ Rezervasyon Oluştur
 
 <input type="text" id="adSoyad" placeholder="Ad Soyad" required>
 
-<input type="tel" id="telefon" placeholder="Telefon Numaranız" required>
+<input type="tel" id="telefon" placeholder="Telefon" required>
 
 <input type="date" id="tarih" required>
-
-<select id="baslangicSaat" required>
-<option value="">Başlangıç Saati</option>
-<option>09:00</option>
-<option>10:00</option>
-<option>11:00</option>
-<option>12:00</option>
-<option>13:00</option>
-<option>14:00</option>
-<option>15:00</option>
-<option>16:00</option>
-<option>17:00</option>
-<option>18:00</option>
-</select>
-
-<select id="bitisSaat" required>
-<option value="">Bitiş Saati</option>
-<option>10:00</option>
-<option>11:00</option>
-<option>12:00</option>
-<option>13:00</option>
-<option>14:00</option>
-<option>15:00</option>
-<option>16:00</option>
-<option>17:00</option>
-<option>18:00</option>
-<option>19:00</option>
-</select>
 
 <select id="organizasyon">
 
 <option>Düğün Çekimi</option>
 <option>Nişan Çekimi</option>
 <option>Drone Çekimi</option>
-<option>Klip Çekimi</option>
-<option>Organizasyon</option>
 
 </select>
 
 <textarea id="mesaj" placeholder="Mesajınız"></textarea>
 
-<h2 style="margin-top:20px;">Tekli Hizmetler</h2>
+<h2>Tekli Hizmetler</h2>
 
 <div class="secim">
 
-<label>
-<input type="checkbox" value="Fotoğraf - 6000">
-Fotoğraf — 6.000 TL
-</label>
+<label><input type="checkbox" value="Fotoğraf - 6000"> Fotoğraf — 6.000 TL</label>
 
-<label>
-<input type="checkbox" value="Video - 6000">
-Video — 6.000 TL
-</label>
+<label><input type="checkbox" value="Video - 6000"> Video — 6.000 TL</label>
 
-<label>
-<input type="checkbox" value="Drone - 9000">
-Drone — 9.000 TL
-</label>
+<label><input type="checkbox" value="Drone - 9000"> Drone — 9.000 TL</label>
 
-<label>
-<input type="checkbox" value="Klip - 10000">
-Klip — 10.000 TL
-</label>
+<label><input type="checkbox" value="Klip - 10000"> Klip — 10.000 TL</label>
 
 </div>
 
@@ -530,7 +374,7 @@ Klip — 10.000 TL
 <label>
 <input type="checkbox" value="Silver Paket - 10000">
 <strong>Silver Paket — 10.000 TL</strong>
-<br>
+<br><br>
 <small>
 Aktüel kamera çekimi + Gelin damat dijital fotoğraf arşivi + 20 adet dijital aile pozu + Albüm
 </small>
@@ -539,7 +383,7 @@ Aktüel kamera çekimi + Gelin damat dijital fotoğraf arşivi + 20 adet dijital
 <label>
 <input type="checkbox" value="Gold Paket - 16000">
 <strong>Gold Paket — 16.000 TL</strong>
-<br>
+<br><br>
 <small>
 Düğün klibi + Gelin damat dijital fotoğraf arşivi + 20 adet dijital aile pozu + Albüm
 </small>
@@ -548,13 +392,23 @@ Düğün klibi + Gelin damat dijital fotoğraf arşivi + 20 adet dijital aile po
 <label>
 <input type="checkbox" value="Ultra Paket - 22000">
 <strong>Ultra Paket — 22.000 TL</strong>
-<br>
+<br><br>
 <small>
 Aktüel kamera çekimi + Drone + Klip + Gelin damat dijital fotoğraf arşivi + 20 adet dijital aile pozu + Albüm
 </small>
 </label>
 
 </div>
+
+<label style="background:#111;padding:15px;border-radius:10px;font-size:14px;">
+<input type="checkbox" id="kvkkOnay" required>
+KVKK sözleşmesini kabul ediyorum.
+</label>
+
+<label style="background:#111;padding:15px;border-radius:10px;font-size:14px;">
+<input type="checkbox" id="gorselOnay" required>
+Fotoğraf ve videolarımın sosyal medya ve internet sitesinde kullanılmasına izin veriyorum.
+</label>
 
 <div class="toplam">
 Toplam:
@@ -576,19 +430,9 @@ Rezervasyon Gönder
 
 <h2>Guliten Medya Organizasyon</h2>
 
-<p>
-Instagram:
-@gulitenmedyaorganizasyon
-</p>
+<p>Instagram: @gulitenmedyaorganizasyon</p>
 
-<p>
-Telefon:
-0545 940 8422
-</p>
-
-<p>
-© 2026 Tüm Hakları Saklıdır
-</p>
+<p>Telefon: 0545 940 8422</p>
 
 </footer>
 
@@ -596,18 +440,14 @@ Telefon:
 class="instagram-btn"
 href="https://instagram.com/gulitenmedyaorganizasyon"
 target="_blank">
-
 Instagram
-
 </a>
 
 <a
 class="whatsapp-btn"
 href="https://wa.me/905459408422"
 target="_blank">
-
 WhatsApp
-
 </a>
 
 <script type="module" src="app.js"></script>
