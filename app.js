@@ -1,136 +1,62 @@
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-
-import {
-
-getFirestore,
-collection,
-addDoc,
-getDocs
-
-}
-
-from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
-
-
-
-const BOT_TOKEN =
-"8727284798:AAF4Z9gNN1H4Pdhn5p0os59qb7z2lM2juqU";
-
-
-const CHAT_ID =
-"1078328207";
-
-
-
-const firebaseConfig = {
-
-apiKey: "AIzaSyBhvOd6JsJssRvJqI7GS9pdqzXkEFG38ls",
-
-authDomain:
-"dugun-rezervasyon-abbaf.firebaseapp.com",
-
-projectId:
-"dugun-rezervasyon-abbaf",
-
-storageBucket:
-"dugun-rezervasyon-abbaf.firebasestorage.app",
-
-messagingSenderId:
-"1051112306377",
-
-appId:
-"1:1051112306377:web:2a57e09bd8e43af79a7f18"
-
-};
-
-
-
-const app =
-initializeApp(firebaseConfig);
-
-const db =
-getFirestore(app);
-
-
-
-const checkboxlar =
-document.querySelectorAll(
-'input[type="checkbox"]'
-);
-
+const form =
+document.getElementById("rezervasyonForm");
 
 const toplamFiyat =
 document.getElementById("toplamFiyat");
 
+const checkboxlar =
+document.querySelectorAll('input[type="checkbox"]');
 
+checkboxlar.forEach(box => {
 
-function toplamHesapla(){
+box.addEventListener("change", hesapla);
+
+});
+
+function hesapla(){
 
 let toplam = 0;
 
+checkboxlar.forEach(box => {
 
-checkboxlar.forEach((item)=>{
-
-if(item.checked){
+if(box.checked){
 
 const fiyat =
-parseInt(item.value.split("-")[1]);
+parseInt(box.value.match(/\d+/));
+
+if(!isNaN(fiyat)){
 
 toplam += fiyat;
 
 }
 
+}
+
 });
 
-
-toplamFiyat.textContent = toplam;
+toplamFiyat.innerText = toplam;
 
 }
 
-
-
-checkboxlar.forEach((item)=>{
-
-item.addEventListener(
-"change",
-toplamHesapla
-);
-
-});
-
-
-
-document
-.getElementById("rezervasyonForm")
-.addEventListener("submit",
-async function(e){
+form.addEventListener("submit", async (e)=>{
 
 e.preventDefault();
-
 
 const adSoyad =
 document.getElementById("adSoyad").value;
 
-
 const telefon =
 document.getElementById("telefon").value;
-
 
 const tarih =
 document.getElementById("tarih").value;
 
-
-const baslangicSaat =
-document.getElementById("baslangicSaat").value;
-
-
-const bitisSaat =
-document.getElementById("bitisSaat").value;
-
-
 const organizasyon =
 document.getElementById("organizasyon").value;
+
+const mesaj =
+document.getElementById("mesaj").value;
+
 const kvkkOnay =
 document.getElementById("kvkkOnay").checked;
 
@@ -139,135 +65,46 @@ document.getElementById("gorselOnay").checked;
 
 if(!kvkkOnay || !gorselOnay){
 
-alert("Rezervasyon göndermek için KVKK ve görsel kullanım izinlerini onaylamalısınız.");
+alert("Sözleşmeleri onaylamalısınız.");
 
 return;
 
 }
 
+const secilenler = [];
 
-if(baslangicSaat >= bitisSaat){
+checkboxlar.forEach(box=>{
 
-alert(
-"Bitiş saati başlangıç saatinden büyük olmalı!"
-);
+if(box.checked && box.value){
 
-return;
-
-}
-
-
-
-const querySnapshot =
-await getDocs(
-collection(db,"rezervasyonlar")
-);
-
-
-let dolu = false;
-
-
-querySnapshot.forEach((doc)=>{
-
-const veri = doc.data();
-
-
-if(veri.tarih === tarih){
-
-if(
-
-baslangicSaat < veri.bitisSaat &&
-bitisSaat > veri.baslangicSaat
-
-){
-
-dolu = true;
-
-}
+secilenler.push(box.value);
 
 }
 
 });
 
+const botToken = "BURAYA_BOT_TOKEN";
+const chatId = "BURAYA_CHAT_ID";
 
+const text = `
+Yeni Rezervasyon
 
-if(dolu){
+Ad Soyad: ${adSoyad}
+Telefon: ${telefon}
+Tarih: ${tarih}
+Organizasyon: ${organizasyon}
 
-alert(
-"Bu saat aralığında rezervasyon mevcut!"
-);
+Seçilen Hizmetler:
+${secilenler.join("\n")}
 
-return;
+Mesaj:
+${mesaj}
 
-}
-
-
-
-let secilenler = [];
-
-
-checkboxlar.forEach((item)=>{
-
-if(item.checked){
-
-secilenler.push(item.value);
-
-}
-
-});
-
-
-
-await addDoc(
-collection(db,"rezervasyonlar"),
-{
-
-adSoyad,
-telefon,
-kvkkOnay,
-gorselOnay,
-onayTarihi: new Date().toLocaleString("tr-TR"),
-tarih,
-baslangicSaat,
-bitisSaat,
-organizasyon,
-paketler: secilenler,
-toplam: toplamFiyat.textContent,
-durum:"Bekliyor"
-
-}
-
-);
-
-
-
-const mesaj = `
-
-🎉 Yeni Rezervasyon
-
-👤 ${adSoyad}
-
-📞 ${telefon}
-
-📅 ${tarih}
-
-⏰ ${baslangicSaat} - ${bitisSaat}
-
-🎊 ${organizasyon}
-
-🛒 ${secilenler.join(", ")}
-
-💰 ${toplamFiyat.textContent} TL
-
+Toplam:
+${toplamFiyat.innerText} TL
 `;
 
-
-
-await fetch(
-
-`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
-
-{
+await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`,{
 
 method:"POST",
 
@@ -276,28 +113,16 @@ headers:{
 },
 
 body:JSON.stringify({
-
-chat_id:CHAT_ID,
-text:mesaj
-
+chat_id:chatId,
+text:text
 })
 
-}
+});
 
-);
+alert("Rezervasyon başarıyla gönderildi.");
 
+form.reset();
 
-
-alert(
-"Rezervasyonunuz alınmıştır 👍"
-);
-
-
-document
-.getElementById("rezervasyonForm")
-.reset();
-
-
-toplamFiyat.textContent = "0";
+toplamFiyat.innerText = "0";
 
 });
