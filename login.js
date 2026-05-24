@@ -10,9 +10,9 @@ document.getElementById("sifre").value;
 
 if(
 
-kullaniciAdi === "admin"
+kullaniciAdi === "mustafagulten"
 &&
-sifre === "123456"
+sifre === "17111991"
 
 ){
 
