@@ -13,8 +13,7 @@
   <div class="logo">Guliten Media</div>
   <nav>
     <a href="#anasayfa">Anasayfa</a>
-    <a href="#fotograflar">Fotoğraflar</a>
-    <a href="#videolar">Videolar</a>
+    <a href="#hizmetler">Hizmetler</a>
     <a href="#rezervasyon">Rezervasyon</a>
     <a href="#iletisim">İletişim</a>
   </nav>
@@ -26,55 +25,41 @@
   <a href="#rezervasyon" class="hero-btn">Rezervasyon Oluştur</a>
 </section>
 
-<section class="bolum" id="fotograflar">
-  <h2>Fotoğraflar</h2>
-  <p>Profesyonel çekimlerimizi inceleyin.</p>
+<section class="bolum" id="hizmetler">
 
-  <div class="iki-kart">
-    <div class="buyuk-kart"
-onclick="galeriAc()"
-style="
-background-image:url('images/DSC_3620.JPG');
-background-size:cover;
-background-position:center;
-">
+<h2>Hizmetlerimiz</h2>
 
-Düğün Fotoğrafları
+<p>Profesyonel medya ve organizasyon çözümleri</p>
+
+<div class="iki-kart">
+
+<div class="buyuk-kart" style="background-image:url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2070');">
+Fotoğraf Çekimi
+</div>
+
+<div class="buyuk-kart" style="background-image:url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070');">
+Aktüel Kamera Çekimi
+</div>
+
+<div class="buyuk-kart" style="background-image:url('https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=2070');">
+Drone Çekimi
+</div>
+
+<div class="buyuk-kart" style="background-image:url('https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=2070');">
+Klip Çekimi
+</div>
+
+<div class="buyuk-kart" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2070');">
+Organizasyon
+</div>
+
+<div class="buyuk-kart" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070');">
+Danışmanlık Hizmetleri
+</div>
 
 </div>
-    <div class="buyuk-kart foto2" onclick="galeriAc()">Dış Çekim Fotoğrafları</div>
-  </div>
+
 </section>
-
-<section class="bolum dark" id="videolar">
-  <h2>Videolar</h2>
-  <p>Klip, reels ve drone videolarımızı izleyin.</p>
-
-  <div class="iki-kart">
-    <div class="buyuk-kart video1" onclick="videoAc()">Düğün Klipleri</div>
-    <div class="buyuk-kart video2" onclick="videoAc()">Drone Videoları</div>
-  </div>
-</section>
-
-<div id="galeriPopup" class="popup">
-  <span onclick="popupKapat()" class="kapat">×</span>
-
-  <div class="popup-icerik">
-
-    <img src="images/DSC_3620.JPG">
-
-  </div>
-</div>
-
-<div id="videoPopup" class="popup">
-  <span onclick="popupKapat()" class="kapat">×</span>
-  <div class="popup-icerik video-box">
-    <iframe
-      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
 
 <section class="container" id="rezervasyon">
 
@@ -183,21 +168,6 @@ box-shadow:0 5px 20px rgba(0,0,0,0.3);
 ">
 WhatsApp
 </a>
-
-<script>
-function galeriAc(){
-  document.getElementById("galeriPopup").style.display = "flex";
-}
-
-function videoAc(){
-  document.getElementById("videoPopup").style.display = "flex";
-}
-
-function popupKapat(){
-  document.getElementById("galeriPopup").style.display = "none";
-  document.getElementById("videoPopup").style.display = "none";
-}
-</script>
 
 <script type="module" src="app.js"></script>
 
