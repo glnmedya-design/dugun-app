@@ -218,6 +218,27 @@ font-weight:bold;
 cursor:pointer;
 }
 
+.secim{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.secim label{
+background:#111;
+padding:18px;
+border-radius:12px;
+font-size:18px;
+}
+
+.toplam{
+font-size:30px;
+font-weight:bold;
+text-align:center;
+margin-top:20px;
+color:#d4af37;
+}
+
 /* FOOTER */
 
 footer{
@@ -420,6 +441,34 @@ Rezervasyon Oluştur
 
 <input type="date" id="tarih" required>
 
+<select id="baslangicSaat" required>
+<option value="">Başlangıç Saati</option>
+<option>09:00</option>
+<option>10:00</option>
+<option>11:00</option>
+<option>12:00</option>
+<option>13:00</option>
+<option>14:00</option>
+<option>15:00</option>
+<option>16:00</option>
+<option>17:00</option>
+<option>18:00</option>
+</select>
+
+<select id="bitisSaat" required>
+<option value="">Bitiş Saati</option>
+<option>10:00</option>
+<option>11:00</option>
+<option>12:00</option>
+<option>13:00</option>
+<option>14:00</option>
+<option>15:00</option>
+<option>16:00</option>
+<option>17:00</option>
+<option>18:00</option>
+<option>19:00</option>
+</select>
+
 <select id="organizasyon">
 
 <option>Düğün Çekimi</option>
@@ -434,7 +483,7 @@ Rezervasyon Oluştur
 
 <h2 style="margin-top:20px;">Tekli Hizmetler</h2>
 
-<div style="display:flex;flex-direction:column;gap:15px;">
+<div class="secim">
 
 <label>
 <input type="checkbox" value="Fotoğraf - 6000">
@@ -460,7 +509,7 @@ Klip — 10.000 TL
 
 <h2 style="margin-top:30px;">Paket Hizmetleri</h2>
 
-<div style="display:flex;flex-direction:column;gap:15px;">
+<div class="secim">
 
 <label>
 <input type="checkbox" value="Silver Paket - 10000">
@@ -479,6 +528,12 @@ Ultra Paket — 22.000 TL
 
 </div>
 
+<div class="toplam">
+Toplam:
+<span id="toplamFiyat">0</span>
+TL
+</div>
+
 <button type="submit">
 Rezervasyon Gönder
 </button>
@@ -488,8 +543,6 @@ Rezervasyon Gönder
 </div>
 
 </section>
-
-<!-- FOOTER -->
 
 <footer id="iletisim">
 
@@ -511,8 +564,6 @@ Telefon:
 
 </footer>
 
-<!-- INSTAGRAM -->
-
 <a
 class="instagram-btn"
 href="https://instagram.com/gulitenmedyaorganizasyon"
@@ -521,8 +572,6 @@ target="_blank">
 Instagram
 
 </a>
-
-<!-- WHATSAPP -->
 
 <a
 class="whatsapp-btn"
