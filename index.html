@@ -1,317 +1,138 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Guliten Media Rezervasyon</title>
-
-<link rel="stylesheet"
-href="style.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guliten Media</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="hero">
-
-<h1>Guliten Media</h1>
-
-<p>
-Düğün, Nişan, Kına ve Özel Gün Çekimleri
-</p>
-
-<a href="#rezervasyon"
-class="hero-btn">
-
-Rezervasyon Oluştur
-
-</a>
-
+<header class="navbar">
+  <div class="logo">Guliten Media</div>
+  <nav>
+    <a href="#anasayfa">Anasayfa</a>
+    <a href="#fotograflar">Fotoğraflar</a>
+    <a href="#videolar">Videolar</a>
+    <a href="#rezervasyon">Rezervasyon</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
 </header>
 
-<section class="galeri">
-
-<h2>Portfolyo / Galeri</h2>
-
-<div class="galeri-grid">
-
-<div class="galeri-kart">
-Düğün Çekimi
-</div>
-
-<div class="galeri-kart">
-Kına Çekimi
-</div>
-
-<div class="galeri-kart">
-Drone Çekimi
-</div>
-
-<div class="galeri-kart">
-Klip Çekimi
-</div>
-
-<div class="galeri-kart">
-Dış Çekim
-</div>
-
-<div class="galeri-kart">
-Albüm Tasarımı
-</div>
-
-</div>
-
+<section class="hero" id="anasayfa">
+  <h1>Hayalleriniz İçin Sinematik Çekimler</h1>
+  <p>Düğün, nişan, kına, klip, drone ve özel gün çekimleri</p>
+  <a href="#rezervasyon" class="hero-btn">Rezervasyon Oluştur</a>
 </section>
 
-<div class="container"
-id="rezervasyon">
+<section class="bolum" id="fotograflar">
+  <h2>Fotoğraflar</h2>
+  <p>Yakında gerçek çekim galerilerimiz burada yer alacak.</p>
 
-<h1>Düğün Rezervasyon Sistemi</h1>
+  <div class="iki-kart">
+    <div class="buyuk-kart">Düğün Fotoğrafları</div>
+    <div class="buyuk-kart">Dış Çekim Fotoğrafları</div>
+  </div>
+</section>
+
+<section class="bolum dark" id="videolar">
+  <h2>Videolar</h2>
+  <p>Klip, reels ve drone videolarımız burada sergilenecek.</p>
+
+  <div class="iki-kart">
+    <div class="buyuk-kart">Düğün Klipleri</div>
+    <div class="buyuk-kart">Drone Videoları</div>
+  </div>
+</section>
+
+<section class="container" id="rezervasyon">
+
+<h1>Rezervasyon Oluştur</h1>
 
 <form id="rezervasyonForm">
 
-<input
-type="text"
-id="adSoyad"
-placeholder="Ad Soyad"
-required>
-
-<input
-type="tel"
-id="telefon"
-placeholder="Telefon"
-required>
-
-<input
-type="date"
-id="tarih"
-required>
+<input type="text" id="adSoyad" placeholder="Ad Soyad" required>
+<input type="tel" id="telefon" placeholder="Telefon" required>
+<input type="date" id="tarih" required>
 
 <div class="saatler">
 
 <div>
-
-<label>
-Başlangıç Saati
-</label>
-
+<label>Başlangıç Saati</label>
 <select id="baslangicSaat" required>
-
-<option value="" selected disabled>
-Başlangıç Saati
-</option>
-
-<option>06:00</option>
-<option>06:30</option>
-<option>07:00</option>
-<option>07:30</option>
-<option>08:00</option>
-<option>08:30</option>
-<option>09:00</option>
-<option>09:30</option>
-<option>10:00</option>
-<option>10:30</option>
-<option>11:00</option>
-<option>11:30</option>
-<option>12:00</option>
-<option>12:30</option>
-<option>13:00</option>
-<option>13:30</option>
-<option>14:00</option>
-<option>14:30</option>
-<option>15:00</option>
-<option>15:30</option>
-<option>16:00</option>
-<option>16:30</option>
-<option>17:00</option>
-<option>17:30</option>
-<option>18:00</option>
-<option>18:30</option>
-<option>19:00</option>
-<option>19:30</option>
-<option>20:00</option>
-<option>20:30</option>
-<option>21:00</option>
-<option>21:30</option>
-<option>22:00</option>
-<option>22:30</option>
-<option>23:00</option>
-
+<option value="" selected disabled>Başlangıç Saati</option>
+<option>06:00</option><option>06:30</option><option>07:00</option><option>07:30</option>
+<option>08:00</option><option>08:30</option><option>09:00</option><option>09:30</option>
+<option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option>
+<option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option>
+<option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
+<option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option>
+<option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option>
+<option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option>
+<option>22:00</option><option>22:30</option><option>23:00</option>
 </select>
-
 </div>
 
 <div>
-
-<label>
-Bitiş Saati
-</label>
-
+<label>Bitiş Saati</label>
 <select id="bitisSaat" required>
-
-<option value="" selected disabled>
-Bitiş Saati
-</option>
-
-<option>06:30</option>
-<option>07:00</option>
-<option>07:30</option>
-<option>08:00</option>
-<option>08:30</option>
-<option>09:00</option>
-<option>09:30</option>
-<option>10:00</option>
-<option>10:30</option>
-<option>11:00</option>
-<option>11:30</option>
-<option>12:00</option>
-<option>12:30</option>
-<option>13:00</option>
-<option>13:30</option>
-<option>14:00</option>
-<option>14:30</option>
-<option>15:00</option>
-<option>15:30</option>
-<option>16:00</option>
-<option>16:30</option>
-<option>17:00</option>
-<option>17:30</option>
-<option>18:00</option>
-<option>18:30</option>
-<option>19:00</option>
-<option>19:30</option>
-<option>20:00</option>
-<option>20:30</option>
-<option>21:00</option>
-<option>21:30</option>
-<option>22:00</option>
-<option>22:30</option>
-<option>23:00</option>
-<option>23:30</option>
-
+<option value="" selected disabled>Bitiş Saati</option>
+<option>06:30</option><option>07:00</option><option>07:30</option><option>08:00</option>
+<option>08:30</option><option>09:00</option><option>09:30</option><option>10:00</option>
+<option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option>
+<option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option>
+<option>14:30</option><option>15:00</option><option>15:30</option><option>16:00</option>
+<option>16:30</option><option>17:00</option><option>17:30</option><option>18:00</option>
+<option>18:30</option><option>19:00</option><option>19:30</option><option>20:00</option>
+<option>20:30</option><option>21:00</option><option>21:30</option><option>22:00</option>
+<option>22:30</option><option>23:00</option><option>23:30</option>
 </select>
-
 </div>
 
 </div>
 
 <select id="organizasyon" required>
-
-<option value="" selected disabled>
-Organizasyon Türü
-</option>
-
+<option value="" selected disabled>Organizasyon Türü</option>
 <option>Düğün</option>
 <option>Nişan</option>
 <option>Kına</option>
 <option>Sünnet</option>
 <option>Doğum Günü</option>
 <option>Mezuniyet</option>
-
 </select>
 
 <h2>Tekli Hizmetler</h2>
 
 <div class="secim">
-
-<label>
-<input type="checkbox"
-value="Fotoğraf - 6000">
-Fotoğraf — 6.000 TL
-</label>
-
-<label>
-<input type="checkbox"
-value="Video - 6000">
-Video — 6.000 TL
-</label>
-
-<label>
-<input type="checkbox"
-value="Drone - 9000">
-Drone — 9.000 TL
-</label>
-
-<label>
-<input type="checkbox"
-value="Klip - 10000">
-Klip — 10.000 TL
-</label>
-
+<label><input type="checkbox" value="Fotoğraf - 6000"> Fotoğraf — 6.000 TL</label>
+<label><input type="checkbox" value="Video - 6000"> Video — 6.000 TL</label>
+<label><input type="checkbox" value="Drone - 9000"> Drone — 9.000 TL</label>
+<label><input type="checkbox" value="Klip - 10000"> Klip — 10.000 TL</label>
 </div>
 
 <h2>Paket Hizmetleri</h2>
 
 <div class="secim">
-
-<label>
-<input type="checkbox"
-value="Silver Paket - 10000">
-
-Silver Paket
-<br>
-
-Fotoğraf + Video + Albüm
-<br>
-
-10.000 TL
-
-</label>
-
-<label>
-<input type="checkbox"
-value="Gold Paket - 15000">
-
-Gold Paket
-<br>
-
-Klip + Fotoğraf + Albüm
-<br>
-
-15.000 TL
-
-</label>
-
-<label>
-<input type="checkbox"
-value="Ultra Paket - 22000">
-
-Ultra Paket
-<br>
-
-Video + Fotoğraf + Klip + Drone + Albüm
-<br>
-
-22.000 TL
-
-</label>
-
+<label><input type="checkbox" value="Silver Paket - 10000"> Silver Paket<br>Fotoğraf + Video + Albüm<br>10.000 TL</label>
+<label><input type="checkbox" value="Gold Paket - 15000"> Gold Paket<br>Klip + Fotoğraf + Albüm<br>15.000 TL</label>
+<label><input type="checkbox" value="Ultra Paket - 22000"> Ultra Paket<br>Video + Fotoğraf + Klip + Drone + Albüm<br>22.000 TL</label>
 </div>
 
 <div class="toplam">
-
-Toplam:
-<span id="toplamFiyat">
-0
-</span>
-TL
-
+Toplam: <span id="toplamFiyat">0</span> TL
 </div>
 
-<button type="submit">
-
-Rezervasyon Gönder
-
-</button>
+<button type="submit">Rezervasyon Gönder</button>
 
 </form>
 
-</div>
+</section>
+
+<section class="bolum" id="iletisim">
+  <h2>İletişim</h2>
+  <p>Rezervasyon ve detaylı bilgi için WhatsApp üzerinden bize ulaşabilirsiniz.</p>
+</section>
 
 <a
 href="https://wa.me/905459408422?text=Merhaba%20rezervasyon%20hakkında%20bilgi%20almak%20istiyorum"
@@ -330,16 +151,10 @@ text-decoration:none;
 z-index:999999;
 box-shadow:0 5px 20px rgba(0,0,0,0.3);
 ">
-
 WhatsApp
-
 </a>
 
-<script type="module"
-src="app.js">
-
-</script>
+<script type="module" src="app.js"></script>
 
 </body>
-
 </html>
