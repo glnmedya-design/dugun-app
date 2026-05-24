@@ -131,7 +131,19 @@ document.getElementById("bitisSaat").value;
 
 const organizasyon =
 document.getElementById("organizasyon").value;
+const kvkkOnay =
+document.getElementById("kvkkOnay").checked;
 
+const gorselOnay =
+document.getElementById("gorselOnay").checked;
+
+if(!kvkkOnay || !gorselOnay){
+
+alert("Rezervasyon göndermek için KVKK ve görsel kullanım izinlerini onaylamalısınız.");
+
+return;
+
+}
 
 
 if(baslangicSaat >= bitisSaat){
